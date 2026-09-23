@@ -19,6 +19,8 @@ jobs:
           repository: itsmkop/itsmkop
           token: ${{ secrets.GH_PAT }}
       - run: python3 bot.py
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       - name: chain next run
         if: ${{ !cancelled() }}
         run: |
